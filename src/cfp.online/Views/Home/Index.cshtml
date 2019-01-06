@@ -1,0 +1,33 @@
+﻿@model cfp.online.Models.ProposalViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="row">
+    <div class="text-left col-md-12">
+        <h1 class="display-4">Welcome</h1>
+        <p class="font-weight-light">Submit below the Call for Paper URL for your conference</p>
+    </div>
+    <div class="col-md-6 mt-4">
+        <form asp-controller="Home" asp-action="Submit">
+            <div class="form-group">
+                <label for="ConferenceName">Conference name</label>
+                <input type="text" class="form-control" name="ConferenceName" id="ConferenceName" required placeholder="Contoso Tech Summit" value="@Model.ConferenceName">
+            </div>
+            <div class="form-group">
+                <label for="Website">Call for Paper URL</label>
+                <input type="url" class="form-control" name="Website" id="Website" required placeholder="https://myconferencesite.com/c4p" value="@Model.Website">
+            </div>
+            <div class="form-group">
+                <label for="EndDate">End date</label>
+                <input type="date" class="form-control" asp-for="EndDate" required placeholder="MM/dd/yyyy" asp-format="{0:MM/dd/yyyy}">
+            </div>
+            <div class="form-group">
+                <label for="Region">Geographic area</label>
+                <select class="form-control" asp-for="Region" asp-items="Model.Regions"></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
