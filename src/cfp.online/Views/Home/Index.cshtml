@@ -4,6 +4,18 @@
     ViewData["Title"] = "Home";
 }
 
+@if (!Model.Empty)
+{
+    if (Model.Success)
+    {
+        <div id="okMessage" class="alert alert-success" role="alert">Call for paper submitted succesfully. Thanks!!</div>
+    }
+    else
+    {
+        <div id="koMessage" class="alert alert-danger" role="alert">There was an error sending the Call for Paper. Sorry for the inconvenience</div>
+    }
+}
+
 <div class="row">
     <div class="text-left col-md-12">
         <h1 class="display-4">Welcome</h1>

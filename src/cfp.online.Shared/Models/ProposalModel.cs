@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace cfp.online.Models
+namespace cfp.online.Shared.Models
 {
     public class ProposalModel
     {
@@ -17,12 +14,8 @@ namespace cfp.online.Models
 
         public string Region { get; set; }
 
-        public DateTime CreatedOn
-        {
-            get
-            {
-                return DateTime.UtcNow;
-            }
-        }
+        public DateTime CreatedOn { get; set; }
+
+        public bool Approved { get; set; }
     }
 }

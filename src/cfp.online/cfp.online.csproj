@@ -17,4 +17,9 @@
     </PackageReference>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\cfp.online.Shared\cfp.online.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

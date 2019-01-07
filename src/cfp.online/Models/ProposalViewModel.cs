@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace cfp.online.Models
 {
@@ -17,6 +15,8 @@ namespace cfp.online.Models
         public string Region { get; set; }
 
         public bool Success { get; set; }
+
+        public bool Empty { get; set; }
 
         public List<SelectListItem> Regions { get; } = new List<SelectListItem>
         {
