@@ -27,11 +27,14 @@
 }
 
 <div class="row">
-    <div class="text-left col-md-12">
-        <h1 class="display-4">Welcome</h1>
-        <p class="font-weight-light">Submit below the Call for Paper URL for your conference</p>
+    <div class="text-center col-md-12">
+        <h1 class="display-2">Welcome!</h1>
+        <p>Submit below the Call for Paper URL for your conference and find speaker from all over the world!!</p>
     </div>
-    <div class="col-md-6 mt-4">
+    <div class="col-md-5 mt-4">
+        <div class="text-center">
+            <h4 class="text-capitalize mb-4">Conference info</h4>
+        </div>
         <form asp-controller="Home" asp-action="Submit">
             <div class="form-group">
                 <label for="ConferenceName">Conference name</label>
@@ -51,5 +54,38 @@
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
+    </div>
+    <div class="col-md-7 mt-4">
+        <div class="text-center">
+            <h4 class="text-capitalize mb-4">Discover speaking opportunities</h4>
+        </div>
+        <p>Discover the session that other user submitted with our shiny .NET CLI Global Tool.</p>
+        <div class="install-tabs">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="dotnet-cli">
+                    <div>
+                        <div class="install-script" id="dotnet-cli-text">
+                            <span>
+                                > dotnet tool install -g c4p.online
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="mt-2">And use right away from Powershell or the Command Prompt</p>
+        <div class="install-tabs">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="dotnet-cli">
+                    <div>
+                        <div class="install-script" id="dotnet-cli-text">
+                            <span>
+                                > c4p EU
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
