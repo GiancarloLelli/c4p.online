@@ -24,7 +24,7 @@ namespace cfp.online.Models
             new SelectListItem { Value="SA", Text ="South America"},
             new SelectListItem { Value="EU", Text ="Europe"},
             new SelectListItem { Value="AF", Text ="Africa"},
-            new SelectListItem { Value="AS", Text ="Asia"}
+            new SelectListItem { Value="AUS", Text ="Asia"}
         };
     }
 }

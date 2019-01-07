@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cfp.online", "src\cfp.online\cfp.online.csproj", "{8B071F0A-721A-40CC-84A4-1F5D9F214DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfp.online.Shared", "src\cfp.online.Shared\cfp.online.Shared.csproj", "{B030F202-8897-4D57-9FBC-7B54C71EC422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cfp.online.Shared", "src\cfp.online.Shared\cfp.online.Shared.csproj", "{B030F202-8897-4D57-9FBC-7B54C71EC422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfp.online.Tool", "src\cfp.online.Tool\cfp.online.Tool.csproj", "{5261B0CC-9231-4BDE-949E-DB0615AF46D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B030F202-8897-4D57-9FBC-7B54C71EC422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B030F202-8897-4D57-9FBC-7B54C71EC422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B030F202-8897-4D57-9FBC-7B54C71EC422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5261B0CC-9231-4BDE-949E-DB0615AF46D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5261B0CC-9231-4BDE-949E-DB0615AF46D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5261B0CC-9231-4BDE-949E-DB0615AF46D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5261B0CC-9231-4BDE-949E-DB0615AF46D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
