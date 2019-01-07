@@ -24,7 +24,6 @@ namespace cfp.online.Persistance
 
             modelBuilder.Entity<ProposalModel>()
                         .Property(p => p.CreatedOn)
-                        .HasDefaultValue(DateTime.UtcNow)
                         .ValueGeneratedOnAdd();
 
             base.OnModelCreating(modelBuilder);

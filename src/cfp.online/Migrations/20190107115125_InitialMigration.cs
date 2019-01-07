@@ -16,7 +16,7 @@ namespace cfp.online.Migrations
                     Website = table.Column<string>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
                     Region = table.Column<string>(nullable: false),
-                    CreatedOn = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2019, 1, 7, 11, 51, 25, 628, DateTimeKind.Utc).AddTicks(9274)),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
                     Approved = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>

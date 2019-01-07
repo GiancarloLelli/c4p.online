@@ -29,7 +29,8 @@ namespace cfp.online.Persistance
                     var freshData = m_context.Poposals
                                             .Where(p => p.Region == region && p.EndDate >= DateTime.UtcNow && p.Approved)
                                             .OrderByDescending(p => p.CreatedOn)
-                                            .Take(count);
+                                            .Take(count)
+                                            .ToList();
 
                     var cfpData = new CallForPaperResponse
                     {

@@ -1,6 +1,7 @@
 ﻿using cfp.online.Models;
 using cfp.online.Persistance;
 using cfp.online.Shared.Models;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -9,10 +10,12 @@ namespace cfp.online.Controllers
     public class HomeController : Controller
     {
         private readonly DatabaseWorker m_worker;
+        private readonly TelemetryClient m_telemetry;
 
-        public HomeController(DatabaseWorker ctx)
+        public HomeController(DatabaseWorker ctx, TelemetryClient client)
         {
             m_worker = ctx ?? throw new ArgumentNullException(nameof(ctx));
+            m_telemetry = client ?? throw new ArgumentNullException(nameof(client));
         }
 
         public IActionResult Privacy() => View();
@@ -26,10 +29,6 @@ namespace cfp.online.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Submit(ProposalViewModel model)
         {
-            model.Empty = false;
-            model.Region = string.Concat(model.Region, " selected");
-            model.Success = ModelState.IsValid;
-
             if (ModelState.IsValid)
             {
                 var item = new ProposalModel
@@ -37,11 +36,16 @@ namespace cfp.online.Controllers
                     ConferenceName = model.ConferenceName,
                     EndDate = model.EndDate,
                     Region = model.Region,
-                    Website = model.Website
+                    Website = model.Website,
+                    CreatedOn = DateTime.UtcNow
                 };
 
                 m_worker.AddProposal(item);
             }
+
+            model.Empty = false;
+            model.Success = ModelState.IsValid;
+            model.Region = string.Concat(model.Region, " selected");
 
             return View("Index", model);
         }
