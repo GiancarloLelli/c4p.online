@@ -38,6 +38,7 @@ namespace cfp.online.Tool
                 {
                     var stringData = await response.Content.ReadAsStringAsync();
                     var typedResponse = JsonConvert.DeserializeObject<CallForPaperResponse>(stringData);
+                    Console.Write(Environment.NewLine);
 
                     if (typedResponse.Proposals == null)
                     {
@@ -56,6 +57,8 @@ namespace cfp.online.Tool
                         Console.WriteLine($"URL: {item.Website}");
                         Console.WriteLine($"Ends: {item.EndDate.ToString("MM/dd/yyyy")}");
                     }
+
+                    Console.Write(Environment.NewLine);
                 }
                 else
                 {

@@ -6,6 +6,17 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>c4p</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackageId>cfp.online</PackageId>
+    <Authors>Giancarlo Lelli</Authors>
+    <Company>Giancarlo Lelli</Company>
+    <Product>Call for Paper online discovery tool</Product>
+    <Description>.NET CLI Tool to browse available Call for Papers around the globe</Description>
+    <Copyright>Giancarlo Lelli</Copyright>
+    <PackageProjectUrl>https://github.com/giancarlolelli/c4p.online</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/GiancarloLelli/c4p.online/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/giancarlolelli/c4p.online</RepositoryUrl>
+    <PackageTags>cli, dotnet, c4p</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
