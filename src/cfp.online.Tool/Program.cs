@@ -2,6 +2,7 @@
 using cfp.online.Shared.Validation;
 using Newtonsoft.Json;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace cfp.online.Tool
                     var typedResponse = JsonConvert.DeserializeObject<CallForPaperResponse>(stringData);
                     Console.Write(Environment.NewLine);
 
-                    if (typedResponse.Proposals == null)
+                    if (typedResponse.Proposals.Count() == 0)
                     {
                         Console.WriteLine($"There are no active Call for Papers at the moment in {countryCode}.");
                         Console.WriteLine($"Check back later or submit yours @ {root}");
