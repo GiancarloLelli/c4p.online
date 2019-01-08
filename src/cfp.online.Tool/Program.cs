@@ -19,14 +19,17 @@ namespace cfp.online.Tool
                                 .InformationalVersion
                                 .ToString();
 
+            var recordCount = 10;
             var root = "http://localhost:51903";
-            var countryCode = arguments.Length > 0 ? arguments[0] : string.Empty;
-            var url = $"{root}/Data/GetAvailableCallForPapers/10/{countryCode}";
+            var countryCode = arguments.Length == 1 ? arguments[0] : string.Empty;
+            var countCheck = arguments.Length == 2 ? int.TryParse(arguments[1], out recordCount) : false;
+
+            var url = $"{root}/Data/GetAvailableCallForPapers/{recordCount}/{countryCode}";
 
             if (string.IsNullOrEmpty(countryCode) || !AreaValidator.Validate(countryCode))
             {
                 Console.WriteLine($"C4P Online v{versionString}");
-                Console.WriteLine("Usage: c4p <country>");
+                Console.WriteLine("Usage: c4p <country> [count]");
                 Console.WriteLine("Example: c4p [NA|SA|AF|EU|AUS]");
                 return;
             }
@@ -34,6 +37,7 @@ namespace cfp.online.Tool
             using (var client = new HttpClient())
             {
                 var response = await client.GetAsync(url);
+
                 if (response.IsSuccessStatusCode)
                 {
                     var stringData = await response.Content.ReadAsStringAsync();
@@ -42,8 +46,9 @@ namespace cfp.online.Tool
 
                     if (typedResponse.Proposals == null)
                     {
-                        Console.WriteLine("There are no active Call for Papers at the moment.");
+                        Console.WriteLine($"There are no active Call for Papers at the moment in {countryCode}.");
                         Console.WriteLine($"Check back later or submit yours @ {root}");
+                        Console.Write(Environment.NewLine);
                         return;
                     }
 
