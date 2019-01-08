@@ -20,7 +20,7 @@ namespace cfp.online.Tool
                                 .ToString();
 
             var recordCount = 10;
-            var root = "http://localhost:51903";
+            var root = "http://c4ponline.azurewebsites.net";
             var countryCode = arguments.Length == 1 ? arguments[0] : string.Empty;
             var countCheck = arguments.Length == 2 ? int.TryParse(arguments[1], out recordCount) : false;
 

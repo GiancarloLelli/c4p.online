@@ -11,7 +11,7 @@ namespace cfp.online.Persistance
 
         }
 
-        public DbSet<ProposalModel> Poposals { get; set; }
+        public DbSet<ProposalModel> Proposals { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

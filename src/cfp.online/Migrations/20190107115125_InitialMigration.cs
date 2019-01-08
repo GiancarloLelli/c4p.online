@@ -8,7 +8,7 @@ namespace cfp.online.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Poposals",
+                name: "Proposals",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -21,13 +21,13 @@ namespace cfp.online.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Poposals", x => x.Id);
+                    table.PrimaryKey("PK_Proposals", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "Poposals");
+            migrationBuilder.DropTable(name: "Proposals");
         }
     }
 }

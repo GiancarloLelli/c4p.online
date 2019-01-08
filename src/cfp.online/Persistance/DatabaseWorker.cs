@@ -26,7 +26,7 @@ namespace cfp.online.Persistance
             {
                 lock (m_sync)
                 {
-                    var freshData = m_context.Poposals
+                    var freshData = m_context.Proposals
                                             .Where(p => p.Region == region && p.EndDate >= DateTime.UtcNow && p.Approved)
                                             .OrderByDescending(p => p.CreatedOn)
                                             .Take(count)
@@ -51,7 +51,7 @@ namespace cfp.online.Persistance
             lock (m_sync)
             {
                 m_cache.Remove("Proposals");
-                m_context.Poposals.Add(item);
+                m_context.Proposals.Add(item);
                 m_context.SaveChanges();
             }
         }
