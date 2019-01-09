@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -13,11 +13,11 @@
     <Description>.NET CLI Tool to browse available Call for Papers around the globe</Description>
     <Copyright>Giancarlo Lelli</Copyright>
     <PackageProjectUrl>https://github.com/giancarlolelli/c4p.online</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/GiancarloLelli/c4p.online/blob/master/LICENSE</PackageLicenseUrl>
+    <License>https://github.com/GiancarloLelli/c4p.online/blob/master/LICENSE</License>
     <RepositoryUrl>https://github.com/giancarlolelli/c4p.online</RepositoryUrl>
     <PackageTags>cli, dotnet, c4p</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
