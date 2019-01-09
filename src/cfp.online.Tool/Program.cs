@@ -32,7 +32,7 @@ namespace cfp.online.Tool
                 Console.Write(Environment.NewLine);
                 Console.WriteLine($"C4P Online v{versionString}");
                 Console.WriteLine("Usage: c4p <country> [count]");
-                Console.WriteLine("Example: c4p [NA|SA|AF|EU|AUS]");
+                Console.WriteLine("Example: c4p [NA|SA|AF|EU|IT|AUS]");
                 Console.Write(Environment.NewLine);
                 return;
             }
