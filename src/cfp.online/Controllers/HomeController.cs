@@ -33,6 +33,7 @@ namespace cfp.online.Controllers
             {
                 try
                 {
+                    model.Success = ModelState.IsValid;
                     var item = new ProposalModel
                     {
                         ConferenceName = model.ConferenceName,
@@ -46,12 +47,12 @@ namespace cfp.online.Controllers
                 }
                 catch (Exception ex)
                 {
+                    model.Success = false;
                     m_telemetry.TrackException(ex);
                 }
             }
 
             model.Empty = false;
-            model.Success = ModelState.IsValid;
             model.Region = string.Concat(model.Region, " selected");
 
             return View("Index", model);
