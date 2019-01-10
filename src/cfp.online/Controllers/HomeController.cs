@@ -31,16 +31,23 @@ namespace cfp.online.Controllers
         {
             if (ModelState.IsValid)
             {
-                var item = new ProposalModel
+                try
                 {
-                    ConferenceName = model.ConferenceName,
-                    EndDate = model.EndDate,
-                    Region = model.Region,
-                    Website = model.Website,
-                    CreatedOn = DateTime.UtcNow
-                };
+                    var item = new ProposalModel
+                    {
+                        ConferenceName = model.ConferenceName,
+                        EndDate = model.EndDate,
+                        Region = model.Region,
+                        Website = model.Website,
+                        CreatedOn = DateTime.UtcNow
+                    };
 
-                m_worker.AddProposal(item);
+                    m_worker.AddProposal(item);
+                }
+                catch (Exception ex)
+                {
+                    m_telemetry.TrackException(ex);
+                }
             }
 
             model.Empty = false;
