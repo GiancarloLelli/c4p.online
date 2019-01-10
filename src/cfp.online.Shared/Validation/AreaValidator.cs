@@ -6,13 +6,14 @@
         {
             var result = false;
 
-            switch (area)
+            switch (area.ToUpper())
             {
                 case "NA":
                 case "SA":
                 case "EU":
                 case "AF":
                 case "AUS":
+                case "IT":
                     result = true;
                     break;
             }
