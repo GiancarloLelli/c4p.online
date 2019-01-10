@@ -22,7 +22,7 @@ namespace cfp.online.Tool
 
             var recordCount = 10;
             var root = "http://c4ponline.azurewebsites.net";
-            var countryCode = arguments.Length == 1 ? arguments[0] : string.Empty;
+            var countryCode = arguments.Length == 1 || arguments.Length > 1 ? arguments[0] : string.Empty;
             var countCheck = arguments.Length == 2 ? int.TryParse(arguments[1], out recordCount) : false;
 
             var url = $"{root}/Data/GetAvailableCallForPapers/{recordCount}/{countryCode}";
